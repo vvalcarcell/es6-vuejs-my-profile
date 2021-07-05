@@ -77,10 +77,11 @@ document.querySelector('.send').addEventListener("click", () => {
     const textareaInput = document.querySelector("#newPost");
     let newArrayObj = textareaInput.value;
 
-    data.myProfile.posts.unshift('newArrayObj');
-    textareaInput.value = '';
+    if (newArrayObj !== '') {
+        data.myProfile.posts.unshift('newArrayObj');
+        textareaInput.value = '';
 
-    let newPost = `
+        let newPost = `
 
             <div class="post">
                 <div class="delete"><i class="fas fa-times"></i></div>
@@ -100,15 +101,16 @@ document.querySelector('.send').addEventListener("click", () => {
 
         `;
 
-    postListHtml.innerHTML += newPost;
+        postListHtml.innerHTML += newPost;
+    }
 
 });
 
-const deleteIcon = document.querySelector('.delete');
-const thisPost = document.querySelector('.post');
+const deleteIcon = document.querySelectorAll('.delete');
+const thisPost = document.querySelectorAll('.post');
 deleteIcon.forEach((icon, index) => {
     icon.addEventListener('click', () => {
-        thisPost[index].style.style.display = "none";
+        thisPost[index].style.display = "none";
     });
 });
 
