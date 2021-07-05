@@ -36,6 +36,7 @@
         <div class="post-list">
 
             <div v-for='post in myProfile.posts' class="post">
+                <div class="delete"><i class="far fa-times"></i></div>
                 <div class="post-details">
                     <div class="user-pic">
                         <img :src="myProfile.details.pic" alt="user pic">
