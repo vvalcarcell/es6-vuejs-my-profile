@@ -35,11 +35,16 @@ new Vue(
         methods: {
             newPost: function () {
                 if (this.textareaInput !== '') {
-                    let newPost = { text: this.textareaInput, date: '05/07/21' };
+                    let newPost = { text: this.textareaInput, date: this.currentDateTime() };
                     this.myProfile.posts.push(newPost);
                     this.textareaInput = '';
                 }
-            }
-        },
+            },
+            currentDateTime: function () {
+                const dateTime = dayjs();
+                return dateTime.format("DD/MM/YYYY HH:mm:ss");
+            },
+        }
+
     }
 );

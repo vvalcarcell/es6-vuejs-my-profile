@@ -72,6 +72,7 @@ data.myProfile.posts.forEach((post) => {
 });
 
 document.querySelector('.send').addEventListener("click", () => {
+    const dateTime = dayjs().format("DD/MM/YYYY HH:mm:ss");
     const textareaInput = document.querySelector("#newPost");
     let newArrayObj = textareaInput.value;
 
@@ -87,7 +88,7 @@ document.querySelector('.send').addEventListener("click", () => {
                     </div>
                     <div class="details">
                         <div class="user-name">${data.myProfile.details.name} ${data.myProfile.details.surname}</div>
-                        <div class="post-date">May 26</div>
+                        <div class="post-date">${dateTime}</div>
                     </div>
                 </div>
                 <div class="post-text">
