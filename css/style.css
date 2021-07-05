@@ -73,6 +73,7 @@ height: 40px;
     border-radius: 5px;
     box-shadow: 0 0 3px #ccc;
     padding: 15px;
+    position: relative;
 }
 
 .post-media img {
@@ -106,6 +107,9 @@ height: 40px;
     margin: 15px 0;
 }
 
-.delete i {
-color: black;
+.delete {
+position: absolute;
+right: 20px;
+color: grey;
 }
+

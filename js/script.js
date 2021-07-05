@@ -42,6 +42,7 @@ data.myProfile.posts.forEach((post) => {
 
     // prepariamo la parte interna dell'elemento html .post
     let postHtml = `
+    <div class="delete"><i class="fas fa-times"></i></div>
     <div class="post-details"> 
         <div class="user-pic">
             <img src="${data.myProfile.details.pic}" alt="user pic">
@@ -82,6 +83,7 @@ document.querySelector('.send').addEventListener("click", () => {
     let newPost = `
 
             <div class="post">
+                <div class="delete"><i class="fas fa-times"></i></div>
                 <div class="post-details">
                     <div class="user-pic">
                         <img src="${data.myProfile.details.pic}">
@@ -102,21 +104,13 @@ document.querySelector('.send').addEventListener("click", () => {
 
 });
 
+const deleteIcon = document.querySelector('.delete');
 const thisPost = document.querySelector('.post');
-const crossIcon = document.querySelector('.delete');
-
-// data.myProfile.posts.forEach((post, index) => {
-
-//     crossIcon[index].addEventListener('click', () => {
-//         thisPost.slice(index, 1);
-//     });
-
-// });
-
-for (i = 0, i < data.myProfile.posts.length, i++) {
-    crossIcon[i].addEventListener('click', () => {
+deleteIcon.forEach((icon, index) => {
+    icon.addEventListener('click', () => {
+        thisPost[index].style.style.display = "none";
+    });
+});
 
 
-    })
-}
 
