@@ -36,7 +36,7 @@ new Vue(
             newPost: function () {
                 if (this.textareaInput !== '') {
                     let newPost = { text: this.textareaInput, date: this.currentDateTime() };
-                    this.myProfile.posts.push(newPost);
+                    this.myProfile.posts.unshift(newPost);
                     this.textareaInput = '';
                 }
             },
@@ -44,6 +44,9 @@ new Vue(
                 const dateTime = dayjs();
                 return dateTime.format("DD/MM/YYYY HH:mm:ss");
             },
+            deletePost: function (index) {
+                this.myProfile.posts.splice(index, 1);
+            }
         }
 
     }

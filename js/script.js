@@ -76,7 +76,7 @@ document.querySelector('.send').addEventListener("click", () => {
     const textareaInput = document.querySelector("#newPost");
     let newArrayObj = textareaInput.value;
 
-    data.myProfile.posts.push('newArrayObj');
+    data.myProfile.posts.unshift('newArrayObj');
     textareaInput.value = '';
 
     let newPost = `
@@ -101,3 +101,22 @@ document.querySelector('.send').addEventListener("click", () => {
     postListHtml.innerHTML += newPost;
 
 });
+
+const thisPost = document.querySelector('.post');
+const crossIcon = document.querySelector('.delete');
+
+// data.myProfile.posts.forEach((post, index) => {
+
+//     crossIcon[index].addEventListener('click', () => {
+//         thisPost.slice(index, 1);
+//     });
+
+// });
+
+for (i = 0, i < data.myProfile.posts.length, i++) {
+    crossIcon[i].addEventListener('click', () => {
+
+
+    })
+}
+
